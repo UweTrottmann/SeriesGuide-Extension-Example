@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">ExtensionExample</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">SeriesGuide Extension Example</string>
     <string name="action_view_episode">View Once Upon A Time 1x02</string>
     <string name="action_view_show">View Once Upon A Time</string>
     <string name="action_settings">Settings</string>
