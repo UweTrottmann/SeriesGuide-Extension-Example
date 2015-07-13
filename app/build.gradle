@@ -25,6 +25,6 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.uwetrottmann.seriesguide:seriesguide-api:1.1.+'
+    compile 'com.uwetrottmann.seriesguide:seriesguide-api:1.2.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
