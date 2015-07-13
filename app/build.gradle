@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 22
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        minSdkVersion 11
-        targetSdkVersion 21
+        minSdkVersion 15
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -24,7 +24,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.uwetrottmann.seriesguide:seriesguide-api:1.2.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
