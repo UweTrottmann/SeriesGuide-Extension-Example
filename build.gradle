@@ -4,9 +4,10 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath 'com.android.tools.build:gradle:3.0.0'
     }
 }
 
@@ -14,5 +15,12 @@ allprojects {
     repositories {
         jcenter()
         mavenCentral()
+        google()
     }
+}
+
+task wrapper(type: Wrapper) {
+    group "build setup"
+    gradleVersion = '4.2.1'
+    distributionType = Wrapper.DistributionType.ALL
 }
