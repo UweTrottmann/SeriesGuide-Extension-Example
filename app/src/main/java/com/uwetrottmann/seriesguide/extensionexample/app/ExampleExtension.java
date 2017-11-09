@@ -18,14 +18,18 @@ public class ExampleExtension extends SeriesGuideExtension {
 
     @Override
     protected void onRequest(int episodeIdentifier, Episode episode) {
-        Log.d(TAG, "onRequest: episode " + episode.toBundle().toString());
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "onRequest: episode " + episode.toBundle().toString());
+        }
 
         publishGoogleAction(episodeIdentifier, episode.getTitle());
     }
 
     @Override
     protected void onRequest(int movieIdentifier, Movie movie) {
-        Log.d(TAG, "onRequest: movie " + movie.toBundle().toString());
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "onRequest: movie " + movie.toBundle().toString());
+        }
 
         publishGoogleAction(movieIdentifier, movie.getTitle());
     }
