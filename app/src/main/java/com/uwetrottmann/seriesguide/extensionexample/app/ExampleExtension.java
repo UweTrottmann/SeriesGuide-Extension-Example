@@ -1,43 +1,19 @@
 package com.uwetrottmann.seriesguide.extensionexample.app;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.util.Log;
-import com.battlelancer.seriesguide.api.Action;
-import com.battlelancer.seriesguide.api.Episode;
-import com.battlelancer.seriesguide.api.Movie;
+import android.app.IntentService;
+import android.support.v4.app.JobIntentService;
+
 import com.battlelancer.seriesguide.api.SeriesGuideExtension;
 
-public class ExampleExtension extends SeriesGuideExtension {
-
-    public static final String TAG = "ExampleExtension";
-
-    public ExampleExtension() {
-        super("ExampleExtension");
-    }
-
-    @Override
-    protected void onRequest(int episodeIdentifier, Episode episode) {
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "onRequest: episode " + episode.toBundle().toString());
-        }
-
-        publishGoogleAction(episodeIdentifier, episode.getTitle());
-    }
-
-    @Override
-    protected void onRequest(int movieIdentifier, Movie movie) {
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "onRequest: movie " + movie.toBundle().toString());
-        }
-
-        publishGoogleAction(movieIdentifier, movie.getTitle());
-    }
-
-    private void publishGoogleAction(int identifier, String searchTerm) {
-        publishAction(new Action.Builder("Example search", identifier)
-                .viewIntent(new Intent(Intent.ACTION_VIEW)
-                        .setData(Uri.parse("https://www.google.com/#q=" + searchTerm)))
-                .build());
-    }
+/**
+ * Optional: Original {@link SeriesGuideExtension} subclass, now subclass of
+ * {@link ExampleExtensionService} for backwards compatibility with API v1.
+ * <p>
+ * Technically we could re-use the existing {@link SeriesGuideExtension} subclass. But as it is now
+ * a subclass of {@link JobIntentService} (previously {@link IntentService}) it requires the
+ * BIND_JOB_SERVICE permission on Android O+. This would prevent SeriesGuide from starting the
+ * service. So we register {@link ExampleExtensionService} separately and keep the original service
+ * component for this class in the manifest.
+ */
+public class ExampleExtension extends ExampleExtensionService {
 }

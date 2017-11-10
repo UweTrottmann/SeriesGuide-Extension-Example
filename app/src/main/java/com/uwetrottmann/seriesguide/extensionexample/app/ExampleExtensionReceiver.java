@@ -12,6 +12,6 @@ public class ExampleExtensionReceiver extends SeriesGuideExtensionReceiver {
 
     @Override
     protected Class<? extends SeriesGuideExtension> getExtensionClass() {
-        return ExampleExtension.class;
+        return ExampleExtensionService.class;
     }
 }
