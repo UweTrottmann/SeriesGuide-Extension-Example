@@ -27,5 +27,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.0.1'
 
-    implementation 'com.uwetrottmann.seriesguide:seriesguide-api:2.0.2'
+    implementation 'com.uwetrottmann.seriesguide:seriesguide-api:2.0.3'
 }
