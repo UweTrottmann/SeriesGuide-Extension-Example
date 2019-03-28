@@ -1,9 +1,10 @@
 package com.uwetrottmann.seriesguide.extensionexample.app;
 
 import android.app.IntentService;
-import android.support.v4.app.JobIntentService;
 
 import com.battlelancer.seriesguide.api.SeriesGuideExtension;
+
+import androidx.core.app.JobIntentService;
 
 /**
  * Optional: Original {@link SeriesGuideExtension} subclass, now subclass of

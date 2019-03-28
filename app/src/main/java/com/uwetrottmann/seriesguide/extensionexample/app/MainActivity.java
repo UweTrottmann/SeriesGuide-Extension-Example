@@ -2,9 +2,10 @@ package com.uwetrottmann.seriesguide.extensionexample.app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.battlelancer.seriesguide.api.Intents;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
