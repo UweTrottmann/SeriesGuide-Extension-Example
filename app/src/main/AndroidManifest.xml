@@ -3,6 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- When targeting SDK 30 (R), make the SeriesGuide app visible to this extension. -->
+    <queries>
+        <package android:name="com.battlelancer.seriesguide" />
+        <package android:name="com.uwetrottmann.seriesguide.amzn" />
+    </queries>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
