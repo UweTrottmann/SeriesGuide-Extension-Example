@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- When targeting SDK 30 (R), make the SeriesGuide app visible to this extension. -->
+    <!-- https://developer.android.com/preview/privacy/package-visibility -->
     <queries>
         <package android:name="com.battlelancer.seriesguide" />
         <package android:name="com.uwetrottmann.seriesguide.amzn" />
