@@ -4,6 +4,8 @@ Example Android project using the SeriesGuide extension API.
 
 This project is built with Gradle. Import the project in Android Studio using the `settings.gradle` file.
 
+This work by [Uwe Trottmann](https://uwetrottmann.com) is licensed under the [Apache License 2.0](LICENSE.txt).
+
 # How to build an extension for SeriesGuide
 
 If added by the user in SeriesGuide, an extension can provide an action button shown below an episode or movie.
