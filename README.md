@@ -24,11 +24,13 @@ The button might link to external content (app deep-link, web page, ...) or trig
     ```
     The artifact is published on Maven Central.
 
-2. Create a new class that extends [`SeriesGuideExtension`](https://seriesgui.de/api/reference/com/battlelancer/seriesguide/api/SeriesGuideExtension.html) and implements at least one of the `onRequest` methods.
+2. Create a new class that extends [`SeriesGuideExtension`](https://seriesgui.de/api/reference/com/battlelancer/seriesguide/api/SeriesGuideExtension.html) and overrides at least one of the `onRequest` methods.
 
 3. Create a new class that extends [`SeriesGuideExtensionReceiver`](https://seriesgui.de/api/reference/com/battlelancer/seriesguide/api/SeriesGuideExtensionReceiver.html).
 
-4. Add the required tags to your `AndroidManifest.xml` file. See [`AndroidManifest.xml` of the example app](https://github.com/UweTrottmann/SeriesGuide-Extension-Example/blob/main/app/src/main/AndroidManifest.xml) or read the class documentation of [`SeriesGuideExtension`](https://seriesgui.de/api/reference/com/battlelancer/seriesguide/api/SeriesGuideExtension.html) for details.
+4. Add the required tags to your `AndroidManifest.xml` file. See [`AndroidManifest.xml` of the example app](https://github.com/UweTrottmann/SeriesGuide-Extension-Example/blob/main/app/src/main/AndroidManifest.xml).
+   See the class documentation of [`SeriesGuideExtension`](https://seriesgui.de/api/reference/com/battlelancer/seriesguide/api/SeriesGuideExtension.html)
+   for details and additional configuration, e.g. how to add a configuration activity.
 
     **When targeting Android 11 (SDK 30)** add `queries` tags to allow the extension to see the SeriesGuide app (learn about [package visiblity changes](https://developer.android.com/preview/privacy/package-visibility)):
     ```xml
@@ -41,11 +43,18 @@ The button might link to external content (app deep-link, web page, ...) or trig
     </manifest>
     ```
 
-Install your extension side-by-side with SeriesGuide. You should be able to add it from the extension customization screen. The activity of this screen, `com.battlelancer.seriesguide.extensions.ExtensionsConfigurationActivity`, is also exported so you can directly start it if you want to direct users to it.
+Install your extension side-by-side with SeriesGuide. You should be able to add it from the extension customization screen.
+The activity of this screen, `com.battlelancer.seriesguide.extensions.ExtensionsConfigurationActivity`,
+is exported so your code can directly start it, e.g. to direct users to add your extension.
 
-## API Reference
-Take a look at the [API reference documentation](https://seriesgui.de/api/reference) for additional details, for example to add a configuration screen.
+# How to deep link to a show or episode
 
-## API change log
+Use the [`Intents`](https://github.com/UweTrottmann/SeriesGuide/blob/dev/api/src/main/java/com/battlelancer/seriesguide/api/Intents.java) class.
+See the [`MainActivity`](app/src/main/java/com/uwetrottmann/seriesguide/extensionexample/app/MainActivity.java) class for examples.
+
+# API Reference
+Take a look at the [API reference documentation](https://seriesgui.de/api/reference) for additional details, for example to add a configuration screen for an extension.
+
+# API change log
 
 See the [SeriesGuide repository](https://github.com/UweTrottmann/SeriesGuide/blob/dev/api/CHANGELOG.md).
