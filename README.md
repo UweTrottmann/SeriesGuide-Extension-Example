@@ -20,7 +20,7 @@ The button might link to external content (app deep-link, web page, ...) or trig
 
 1. Add the API dependency to your Android project:
     ```
-    implementation 'com.uwetrottmann.seriesguide:seriesguide-api:2.1.0'
+    implementation 'com.uwetrottmann.seriesguide:seriesguide-api:2.2.1'
     ```
     The artifact is published on Maven Central.
 
