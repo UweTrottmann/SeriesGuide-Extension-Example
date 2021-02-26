@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.buttonMainViewShow).setOnClickListener(v -> {
             // view show in SeriesGuide
-            Intent intent = Intents.buildViewShowIntent(248835);
+            Intent intent = Intents.buildViewShowIntent(82856);
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
             }
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.buttonMainViewEpisode).setOnClickListener(v -> {
             // view episode in SeriesGuide
-            Intent intent = Intents.buildViewEpisodeIntent(248835, 4164086);
+            Intent intent = Intents.buildViewEpisodeIntent(82856, 1, 2);
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
             }
