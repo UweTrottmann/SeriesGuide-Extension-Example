@@ -1,33 +1,31 @@
-package com.uwetrottmann.seriesguide.extensionexample.app;
+package com.uwetrottmann.seriesguide.extensionexample.app
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.battlelancer.seriesguide.api.Intents
 
-import com.battlelancer.seriesguide.api.Intents;
+class MainActivity : AppCompatActivity() {
 
-import androidx.appcompat.app.AppCompatActivity;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        findViewById(R.id.buttonMainViewShow).setOnClickListener(v -> {
+        findViewById<View>(R.id.buttonMainViewShow).setOnClickListener {
             // view show in SeriesGuide
-            Intent intent = Intents.buildViewShowIntent(82856);
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
+            val intent = Intents.buildViewShowIntent(82856)
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
             }
-        });
+        }
 
-        findViewById(R.id.buttonMainViewEpisode).setOnClickListener(v -> {
+        findViewById<View>(R.id.buttonMainViewEpisode).setOnClickListener {
             // view episode in SeriesGuide
-            Intent intent = Intents.buildViewEpisodeIntent(82856, 1, 2);
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
+            val intent = Intents.buildViewEpisodeIntent(82856, 1, 2)
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
             }
-        });
+        }
     }
+
 }

@@ -1,16 +1,15 @@
-package com.uwetrottmann.seriesguide.extensionexample.app;
+package com.uwetrottmann.seriesguide.extensionexample.app
 
-import com.battlelancer.seriesguide.api.SeriesGuideExtension;
+import com.battlelancer.seriesguide.api.SeriesGuideExtension
 
 /**
- * Optional: Original {@link SeriesGuideExtension} subclass, now subclass of
- * {@link ExampleExtensionService} for backwards compatibility with API v1.
- * <p>
- * Technically we could re-use the existing {@link SeriesGuideExtension} subclass. But as it is now
- * a subclass of {@link androidx.core.app.JobIntentService} (previously {@link android.app.IntentService})
+ * Optional: Original [SeriesGuideExtension] subclass, now subclass of
+ * [ExampleExtensionService] for backwards compatibility with API v1.
+ *
+ * Technically we could re-use the existing [SeriesGuideExtension] subclass. But as it is now
+ * a subclass of [androidx.core.app.JobIntentService] (previously [android.app.IntentService])
  * it requires the BIND_JOB_SERVICE permission on Android O+.
- * This would prevent SeriesGuide from starting the service. So we register {@link ExampleExtensionService}
+ * This would prevent SeriesGuide from starting the service. So we register [ExampleExtensionService]
  * separately and keep the original service component for this class in the manifest.
  */
-public class ExampleExtension extends ExampleExtensionService {
-}
+class ExampleExtension : ExampleExtensionService()

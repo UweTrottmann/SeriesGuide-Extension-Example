@@ -1,17 +1,13 @@
-package com.uwetrottmann.seriesguide.extensionexample.app;
+package com.uwetrottmann.seriesguide.extensionexample.app
 
-import com.battlelancer.seriesguide.api.SeriesGuideExtension;
-import com.battlelancer.seriesguide.api.SeriesGuideExtensionReceiver;
+import com.battlelancer.seriesguide.api.SeriesGuideExtension
+import com.battlelancer.seriesguide.api.SeriesGuideExtensionReceiver
 
+class ExampleExtensionReceiver : SeriesGuideExtensionReceiver() {
 
-public class ExampleExtensionReceiver extends SeriesGuideExtensionReceiver {
-    @Override
-    protected int getJobId() {
-        return 1;
-    }
+    override fun getJobId(): Int = 1
 
-    @Override
-    protected Class<? extends SeriesGuideExtension> getExtensionClass() {
-        return ExampleExtensionService.class;
-    }
+    override fun getExtensionClass(): Class<out SeriesGuideExtension?> =
+        ExampleExtensionService::class.java
+
 }
