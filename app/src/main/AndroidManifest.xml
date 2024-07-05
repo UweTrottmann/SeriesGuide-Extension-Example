@@ -11,6 +11,7 @@
 
         <activity
             android:name="com.uwetrottmann.seriesguide.extensionexample.app.MainActivity"
+            android:exported="true"
             android:label="@string/title_activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +22,7 @@
         <receiver
             android:name="com.uwetrottmann.seriesguide.extensionexample.app.ExampleExtensionReceiver"
             android:description="@string/app_name"
+            android:exported="true"
             android:label="@string/app_name"
             tools:ignore="ExportedReceiver">
             <intent-filter>
@@ -34,6 +36,7 @@
             android:name="com.uwetrottmann.seriesguide.extensionexample.app.ExampleExtension"
             android:description="@string/app_name"
             android:enabled="@bool/isNotOreoOrHigher"
+            android:exported="true"
             android:label="@string/app_name"
             tools:ignore="ExportedService">
             <intent-filter>
