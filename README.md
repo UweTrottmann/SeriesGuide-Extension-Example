@@ -12,7 +12,7 @@ If added by the user in SeriesGuide, an extension can provide an action button s
 
 The button might link to external content (app deep-link, web page, ...) or trigger an action in another app (play, record, ...). Or it can just display some status information (e.g. "downloaded"). Have a look at the [available extensions on Google Play](https://play.google.com/store/search?q=SeriesGuide%20Extension&c=apps).
 
-<img src="https://seriesgui.de/images/extensions-600x256.png" width="300" height="128" alt="Extensions examples" />
+<img src="extensions-780x280.png" width="390" height="140" alt="Extensions examples" />
 
 ## Get started
 
@@ -20,7 +20,7 @@ The button might link to external content (app deep-link, web page, ...) or trig
 
 1. Add the API dependency to your Android project:
     ```
-    implementation 'com.uwetrottmann.seriesguide:seriesguide-api:2.2.1'
+    implementation("com.uwetrottmann.seriesguide:seriesguide-api:2.2.1")
     ```
     The artifact is published on Maven Central.
 
