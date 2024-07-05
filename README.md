@@ -16,7 +16,7 @@ The button might link to external content (app deep-link, web page, ...) or trig
 
 ## Get started
 
-<a href="https://search.maven.org/search?q=seriesguide-api"><img src="https://img.shields.io/maven-central/v/com.uwetrottmann.seriesguide/seriesguide-api.svg?style=flat-square"></a>
+<a href="https://central.sonatype.com/search?q=seriesguide-api"><img src="https://img.shields.io/maven-central/v/com.uwetrottmann.seriesguide/seriesguide-api.svg?style=flat-square"></a>
 
 1. Add the API dependency to your Android project:
     ```
@@ -50,7 +50,7 @@ is exported so your code can directly start it, e.g. to direct users to add your
 # How to deep link to a show or episode
 
 Use the [`Intents`](https://github.com/UweTrottmann/SeriesGuide/blob/dev/api/src/main/java/com/battlelancer/seriesguide/api/Intents.java) class.
-See the [`MainActivity`](app/src/main/java/com/uwetrottmann/seriesguide/extensionexample/app/MainActivity.java) class for examples.
+See the [`MainActivity`](app/src/main/java/com/uwetrottmann/seriesguide/extensionexample/app/MainActivity.kt) class for examples.
 
 # API Reference
 Take a look at the [API reference documentation](https://seriesgui.de/api/reference) for additional details, for example to add a configuration screen for an extension.
