@@ -49,7 +49,7 @@
             android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
-    <!-- When targeting SDK 30 (R), make the SeriesGuide app visible to this extension. -->
+    <!-- When targeting SDK 30 (R), make the SeriesGuide apps (Google Play, Amazon Appstore) visible to this extension. -->
     <!-- https://developer.android.com/preview/privacy/package-visibility -->
     <queries>
         <package android:name="com.battlelancer.seriesguide" />
