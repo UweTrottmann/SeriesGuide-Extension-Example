@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    namespace 'com.uwetrottmann.seriesguide.extensionexample.app'
+    compileSdkVersion 34
 
     defaultConfig {
         minSdkVersion 21
@@ -24,9 +25,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     // https://developer.android.com/jetpack/androidx/releases/appcompat
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
 
     implementation 'com.uwetrottmann.seriesguide:seriesguide-api:2.2.1'
 }
