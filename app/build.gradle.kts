@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("org.jetbrains.kotlin.android") // Apply to unify versions in dependencies
 }
 
 android {
@@ -29,6 +30,7 @@ android {
 
 dependencies {
     // https://developer.android.com/jetpack/androidx/releases/appcompat
+    // When updating, also update Kotlin plugin to match to align version in transitive dependencies
     implementation("androidx.appcompat:appcompat:1.7.0")
 
     implementation("com.uwetrottmann.seriesguide:seriesguide-api:2.2.1")
