@@ -2,13 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- When targeting SDK 30 (R), make the SeriesGuide app visible to this extension. -->
-    <!-- https://developer.android.com/preview/privacy/package-visibility -->
-    <queries>
-        <package android:name="com.battlelancer.seriesguide" />
-        <package android:name="com.uwetrottmann.seriesguide.amzn" />
-    </queries>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +9,15 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
+        <activity
+            android:name="com.uwetrottmann.seriesguide.extensionexample.app.MainActivity"
+            android:label="@string/title_activity_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <receiver
             android:name="com.uwetrottmann.seriesguide.extensionexample.app.ExampleExtensionReceiver"
             android:description="@string/app_name"
@@ -25,10 +27,6 @@
                 <action android:name="com.battlelancer.seriesguide.api.SeriesGuideExtension" />
             </intent-filter>
         </receiver>
-        <service
-            android:name="com.uwetrottmann.seriesguide.extensionexample.app.ExampleExtensionService"
-            android:exported="true"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <!-- Optional: service component for backwards compatibility with API v1 -->
         <!-- As the extension targets SDK 26+, disable it on O+ to avoid crash due to background restrictions. -->
@@ -43,15 +41,16 @@
             </intent-filter>
         </service>
 
-        <activity
-            android:name="com.uwetrottmann.seriesguide.extensionexample.app.MainActivity"
-            android:label="@string/title_activity_main">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <service
+            android:name="com.uwetrottmann.seriesguide.extensionexample.app.ExampleExtensionService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
+
+    <!-- When targeting SDK 30 (R), make the SeriesGuide app visible to this extension. -->
+    <!-- https://developer.android.com/preview/privacy/package-visibility -->
+    <queries>
+        <package android:name="com.battlelancer.seriesguide" />
+        <package android:name="com.uwetrottmann.seriesguide.amzn" />
+    </queries>
 
 </manifest>
