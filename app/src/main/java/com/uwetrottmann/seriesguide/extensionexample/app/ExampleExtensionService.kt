@@ -15,7 +15,7 @@ open class ExampleExtensionService : SeriesGuideExtension(NAME) {
             Log.d(NAME, "onRequest: episode ${episode.toBundle()}")
         }
 
-        publishGoogleAction(episodeIdentifier, episode.title)
+        publishGoogleAction(episodeIdentifier, "tv?tmdb=${episode.tmdbId}&season=${episode.season}&episode=${episode.number}")
     }
 
     override fun onRequest(movieIdentifier: Int, movie: Movie) {
@@ -23,7 +23,7 @@ open class ExampleExtensionService : SeriesGuideExtension(NAME) {
             Log.d(NAME, "onRequest: movie ${movie.toBundle()}")
         }
 
-        publishGoogleAction(movieIdentifier, movie.title)
+        publishGoogleAction(movieIdentifier, "movie?tmdb=${movie.tmdbId}")
     }
 
     private fun publishGoogleAction(identifier: Int, searchTerm: String) {
@@ -31,7 +31,7 @@ open class ExampleExtensionService : SeriesGuideExtension(NAME) {
             Action.Builder("Example search", identifier)
                 .viewIntent(
                     Intent(Intent.ACTION_VIEW)
-                        .setData(Uri.parse("https://www.google.com/#q=$searchTerm"))
+                        .setData(Uri.parse("https://vidsrc.xyz/embed/$searchTerm&ds_lang=bg"))
                 )
                 .build()
         )
