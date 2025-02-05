@@ -28,7 +28,7 @@ open class ExampleExtensionService : SeriesGuideExtension(NAME) {
 
     private fun publishGoogleAction(identifier: Int, searchTerm: String) {
         publishAction(
-            Action.Builder("Example search", identifier)
+            Action.Builder("VidSrc", identifier)
                 .viewIntent(
                     Intent(Intent.ACTION_VIEW)
                         .setData(Uri.parse("https://vidsrc.xyz/embed/$searchTerm&ds_lang=bg"))
