@@ -15,7 +15,7 @@ open class ExampleExtensionService : SeriesGuideExtension(NAME) {
             Log.d(NAME, "onRequest: episode ${episode.toBundle()}")
         }
 
-        publishGoogleAction(episodeIdentifier, "tv?tmdb=${episode.tmdbId}&season=${episode.season}&episode=${episode.number}")
+        publishGoogleAction(episodeIdentifier, "tv?tmdb=${episode.showTmdbId}&season=${episode.season}&episode=${episode.number}")
     }
 
     override fun onRequest(movieIdentifier: Int, movie: Movie) {
