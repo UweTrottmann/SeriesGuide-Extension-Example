@@ -34,6 +34,9 @@ The button might link to external content (app deep-link, web page, ...) or trig
    See the class documentation of [`SeriesGuideExtension`](https://seriesgui.de/api/reference/com/battlelancer/seriesguide/api/SeriesGuideExtension.html)
    for details and additional configuration, e.g. how to add a configuration activity.
 
+    **To support safer intents in Android 15 (SDK 35)** make sure to add the subscribe and update 
+    actions to the intent filter of the receiver.
+
     **When targeting Android 11 (SDK 30)** add `queries` tags to allow the extension to see the SeriesGuide app (learn about [package visiblity changes](https://developer.android.com/preview/privacy/package-visibility)):
 
     ```xml

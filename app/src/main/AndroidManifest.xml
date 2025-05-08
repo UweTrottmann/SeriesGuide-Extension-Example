@@ -27,6 +27,9 @@
             tools:ignore="ExportedReceiver">
             <intent-filter>
                 <action android:name="com.battlelancer.seriesguide.api.SeriesGuideExtension" />
+                <!-- Android 15 safer intents: explicitly declare subscribe and update actions are supported. -->
+                <action android:name="com.battlelancer.seriesguide.api.action.SUBSCRIBE" />
+                <action android:name="com.battlelancer.seriesguide.api.action.UPDATE" />
             </intent-filter>
         </receiver>
 
